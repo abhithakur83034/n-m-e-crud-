@@ -1,0 +1,45 @@
+<%- include('../layouts/header.ejs') -%>
+
+<%
+ if(typeof message !== 'undefined'){
+    %>
+    <h3><%- message -%></h3>
+    <%
+ }
+
+%>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+
+            <div class="card">
+                <div class="card-title"><h1>Admin Login</h1></div>
+                <div class="card-body">
+                    
+                    
+                    <form method="post" action="/admin/login" >
+                    
+<p><input class="form-control" type="email" name="email" placeholder="Enter email"></p>
+<p><input class="form-control" type="password" name="password" placeholder="Enter password"></p>       
+
+<input class=" btn btn-outline-info" type="submit" value="login">
+            
+<br> <br>
+
+<a href="/admin/forget" class=" btn btn-outline-dark">Forget Password</a>
+
+</form>
+                    
+                    </div>
+            </div>
+
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+
+<%- include('../layouts/footer.ejs') -%>

@@ -1,0 +1,31 @@
+<%- include('layouts/header.ejs') -%>
+
+
+
+
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="userImages/<%= user.image %>"  width="180px" height="210px" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Welcome, <%- user.name -%></h5>
+          <p class="card-text"> Email
+            <%= user.email %></p>
+          <p class="card-text">
+            <small class="text-body-secondary">Mobile 
+                <%= user.mobile %></small></p>
+                <br>
+                <a class="btn btn-outline-info" href="/edit?id=<%= user._id %>">Edit</a>
+                <a class="btn btn-outline-danger" href="/logout">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+<%- include('layouts/footer.ejs') -%>

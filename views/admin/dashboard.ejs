@@ -1,0 +1,70 @@
+
+<%- include('../layouts/header.ejs') -%>
+
+
+<h1>admine dashboard</h1>
+
+<a href="/admin/new-user"  class="btn btn-outline-info">Add New User</a>
+<a href="/admin/export-users"  class="btn btn-outline-info">ExportUser</a> <br> <br>
+
+
+
+<table  class="table table-dark table-hover">
+    <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Mobile</th>
+    <th>Image</th>
+    <th>Verified</th>
+    <th>Action</th>
+</tr>
+
+
+<%
+if(users.length > 0){
+  for(let i=0 ; i < users.length ; i++){
+    %>
+    <tr>
+        <td><%= users[i].name %></td>
+        <td><%= users[i].email %></td>
+        <td><%= users[i].mobile %></td>
+        <td> <img src="/userimages/<%= users[i].image %>" alt="" width="100px" height="100px"> </td>
+        <td><% 
+             if(users[i].is_verified == 0){
+                %>
+                 <p>Not Verified</p>
+                <%
+             } else{
+                %>
+                 <p> Verified</p>
+                <%
+             }
+            %> </td>
+
+         
+            <td>
+                <a  class="btn btn-outline-success"
+                 href="/admin/edit-user?id=<%- users[i]._id -%>">Edit</a>
+                <a  class="btn btn-outline-danger"
+                 href="/admin/delete-user?id=<%- users[i]._id -%>">Delete</a>
+            </td>
+    </tr>
+    <%
+  }
+}else{
+    %>
+        <tr>
+            <td colspan="s">User not found</td>
+        </tr>
+    <%
+
+}
+%>
+
+
+</table>
+<a class="btn btn-outline-primary" href="/admin/home">Home</a>
+<%- include('../layouts/footer.ejs') -%>
+
+
+

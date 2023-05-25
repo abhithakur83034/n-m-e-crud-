@@ -1,0 +1,41 @@
+<%- include('layouts/header.ejs') -%>
+
+ 
+
+ <%
+
+ if(typeof message !== 'undefined'){
+    %>
+    <h4>
+        <%= message  %>        
+    </h4>
+    <%
+ }
+   
+ %>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-title"><h1>Verification</h1></div>
+                <div class="card-body">
+                    <form action="" method="post">
+                        <p><input class="form-control" type="email" name="email" placeholder="Enter email"></p>
+                 
+      <div class="card-footer">
+                        <input class="btn btn-outline-success" type="submit" value="sent verification link">
+
+                    </div>                       
+                    </form></div>
+               
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+
+
+
+
+<%- include('layouts/footer.ejs') -%>

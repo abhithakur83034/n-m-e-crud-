@@ -1,0 +1,72 @@
+<%- include('../layouts/header.ejs') -%>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+
+            <div class="card">
+                <div class="card-title"><h1>Edit User</h1></div>
+                <div class="card-body">
+                    
+                    
+                    <form method="post" >
+                    
+                        <p><input class="form-control" 
+                            type="text" name="name"
+                            value="<%- user.name -%>"
+                            placeholder="Enter name"></p>
+
+
+                    <p><input class="form-control" 
+                        type="email" name="email" 
+                        value="<%- user.email -%>"
+                        placeholder="Enter email"></p>       
+
+                    <p><input class="form-control" 
+                        type="number" name="mobile"
+                        value="<%- user.mobile -%>" 
+                        placeholder="Enter mobile"></p>  
+                        <p>
+                            <label>Verified</label>
+                            <input type="radio" name="verify" value="1"  value="1" <% if(user.is_verified == 1){%> checked <%} %>> 
+                        </p>     
+                        <p>
+                            <label>Unverified</label>
+                            <input type="radio" name="verify" value="0"  <% if(user.is_verified == 0){%> checked <%} %>>
+                        </p>     
+
+       <p>  
+          <input class="form-control btn btn-outline-info"
+          type="hidden" name="id" value="<%- user._id -%>"> 
+        </p>
+
+
+
+
+                        <p>
+    
+    <input class="form-control btn btn-outline-info"
+    type="submit" value="Update User"> 
+</p>
+            
+<p>
+    
+    <a class="form-control  btn btn-outline-info"
+    href="/admin/dashboard">Dashboard</a>
+
+</p>
+</form>
+                    
+                    </div>
+            </div>
+
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+
+<%- include('../layouts/footer.ejs') -%>

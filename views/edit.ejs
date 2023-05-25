@@ -1,0 +1,47 @@
+<%- include('layouts/header.ejs') -%>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-title"></div>
+                <div class="card-body">
+<img src="userImages/<%= user.image %>" width="150px" height="150px" alt="">
+<br> <br>
+                    <form method="post" action="" enctype="multipart/form-data">
+                            <p><input type="file" name="image"></p>
+                            <input type="hidden" name="user_id" value="<%= user._id %>">
+                        <p>
+                        <input type="text" 
+                        name="name"
+                        class="form-control"
+                         value="<%= user.name %>"
+                         placeholder="enter name">
+                       </p>
+                       <p>
+                        <input type="email" 
+                        name="email"
+                        class="form-control"
+                         value="<%= user.email %>"
+                         placeholder="enter email">
+                       </p>
+                       <p>
+                        <input type="number" 
+                        name="mobile"
+                        class="form-control"
+                         value="<%= user.mobile %>"
+                         placeholder="enter mobile">
+                       </p>
+<input class="btn btn-outline-info" type="submit" value="update profile">
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+
+<%- include('layouts/footer.ejs') -%>
